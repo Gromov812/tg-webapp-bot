@@ -1,11 +1,12 @@
 
 import './App.css';
-import {useEffect} from "react";
+import {Suspense, useEffect} from "react";
 import Header from "./components/header/Header";
 import {useTelegram} from "./Hooks/useTelegram";
 import {Link, Router, Route, BrowserRouter, Routes} from "react-router-dom";
 import Button from "./components/button/Button";
 import Currencies from "./components/Currencies/Currencies";
+import LazyLoad from "./components/LazyLoad/LazyLoad";
 
 function App() {
 
@@ -21,7 +22,12 @@ function App() {
     <div className="App">
 
     <Routes>
-        <Route path={'/currencies'} element={<Currencies />}></Route>
+
+        <Route path={'/currencies'}  element={
+            <Suspense fallback={<LazyLoad/>}>
+            <Currencies />
+            </Suspense>
+        }></Route>
     </Routes>
 
         <Link to={'/currencies'}>
