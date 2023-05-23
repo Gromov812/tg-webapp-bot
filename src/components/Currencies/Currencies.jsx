@@ -15,30 +15,30 @@ const Currencies = () => {
 
     useEffect(() => {
        let t = setTimeout(() => {
-            axios.get('https://open.er-api.com/v6/latest/USD')
-                .then(res => {
-                    console.log(res)
-                    setCurrPairsList(res.data.rates);
-                });
+            // axios.get('https://open.er-api.com/v6/latest/USD')
+            //     .then(res => {
+            //         console.log(res)
+            //         setCurrPairsList(res.data.rates);
+            //     });
             setLoading(false);
         },1500);
 
     }, [])
 
-    let pairsList = {};
-
-    for (let el in currPairsList) {
-        pairsList[el] =  currPairsList[el];
-    }
-     pairsList = Object.entries(pairsList)
-
-    pairsList = pairsList.map((el,i) => {
-        console.log(el)
-        return (
-            <div>
-            <CurrPair key={i} name={el[0]} value={el[1]}/>
-            </div>
-        )})
+    // let pairsList = {};
+    //
+    // for (let el in currPairsList) {
+    //     pairsList[el] =  currPairsList[el];
+    // }
+    //  pairsList = Object.entries(pairsList)
+    //
+    // pairsList = pairsList.map((el,i) => {
+    //     console.log(el)
+    //     return (
+    //         <div>
+    //         <CurrPair key={i} name={el[0]} value={el[1]}/>
+    //         </div>
+    //     )})
 
     return (<>
 
@@ -46,7 +46,7 @@ const Currencies = () => {
                 ?
                  <LazyLoad />
                 :
-                pairsList
+               'CONTENT'
 
             }
             <button className={'button'} onClick={() => nav(-1)}>Prev</button>
