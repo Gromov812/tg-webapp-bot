@@ -1,11 +1,10 @@
 
 import './App.css';
 import {useEffect} from "react";
-import Button from "./components/button/button";
+import Button from "./components/button/Button";
+import Header from "./components/header/Header";
 
-console.log(window.Telegram);
 
-const tg = window.Telegram.WebApp;
 function App() {
 
     useEffect(() => {
@@ -13,16 +12,11 @@ function App() {
     },[])
 
 
-    const onClose = () => {
-        tg.close();
-    }
-
-
   return (
     <div className="App">
 
-        <button onClick={onClose}>Close</button>
-        <Button />
+        <Header />
+
     </div>
   );
 }
