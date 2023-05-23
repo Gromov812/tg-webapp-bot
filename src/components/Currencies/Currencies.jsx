@@ -26,7 +26,7 @@ const Currencies = () => {
     }
      pairsList = Object.entries(pairsList)
 
-    pairsList.map((el,i) => {
+    pairsList = pairsList.map((el,i) => {
         console.log(el)
         return (
             <div>
@@ -35,10 +35,10 @@ const Currencies = () => {
         )})
 
     return (<>
-        <div>
-            {pairsList}
-        </div>
+
+
         <button onClick={() => nav(-1)}>Prev</button>
+            {pairsList}
         </>
     );
 };
