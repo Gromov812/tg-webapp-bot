@@ -4,7 +4,7 @@ import load from '../../asseets/load.gif';
 const LazyLoad = () => {
     return (
         <div>
-            {load}
+           <img src={load} />
         </div>
     );
 };

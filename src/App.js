@@ -24,9 +24,7 @@ function App() {
     <Routes>
 
         <Route path={'/currencies'}  element={
-            <Suspense fallback={<LazyLoad/>}>
             <Currencies />
-            </Suspense>
         }></Route>
     </Routes>
 

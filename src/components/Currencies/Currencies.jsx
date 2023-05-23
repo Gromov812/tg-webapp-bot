@@ -1,24 +1,28 @@
-import React, {useLayoutEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import CurrPair from "./CurrPair";
 import "./Currencies.css";
 import "../button/button.css";
 import {useNavigate} from "react-router-dom";
+import LazyLoad from "../LazyLoad/LazyLoad";
 
 const Currencies = () => {
+
+    const [isLoading, setLoading] = useState(true);
 
     const nav = useNavigate();
         const [currPairsList, setCurrPairsList] = useState([]);
 
-    useLayoutEffect(() => {
-       let timeout = setTimeout(() => {
+    useEffect(() => {
+       let t = setTimeout(() => {
             axios.get('https://open.er-api.com/v6/latest/USD')
                 .then(res => {
                     console.log(res)
-                    setCurrPairsList(res.data?.rates);
-                })
-        },3000);
-    return clearInterval(timeout);
+                    setCurrPairsList(res.data.rates);
+                });
+            setLoading(false);
+        },1500);
+return clearInterval(t);
     }, [])
 
     let pairsList = {};
@@ -38,9 +42,14 @@ const Currencies = () => {
 
     return (<>
 
+            {isLoading
+                ?
+                 <LazyLoad />
+                :
+                pairsList
 
-        <button className={'button'} onClick={() => nav(-1)}>Prev</button>
-            {pairsList}
+            }
+            <button className={'button'} onClick={() => nav(-1)}>Prev</button>
         </>
     );
 };
