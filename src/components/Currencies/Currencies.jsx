@@ -22,7 +22,7 @@ const Currencies = () => {
                 });
             setLoading(false);
         },1500);
-return clearInterval(t);
+
     }, [])
 
     let pairsList = {};
