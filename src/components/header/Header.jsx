@@ -5,10 +5,11 @@ import {useTelegram} from "../../Hooks/useTelegram";
 
 
 const Header = (props) => {
-const {user, onClose, tg} = useTelegram();
+const {user, onClose, tg, onToggleMainButton} = useTelegram();
     return (
         <div>
             <h1>Hello, {user.name}!</h1>
+            <Button onButtonClick = {onToggleMainButton} name = {'Main'}/>
         <Button onButtonClick = {onClose} name = {'Close'} />
         </div>
     );
