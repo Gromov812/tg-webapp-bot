@@ -1,9 +1,9 @@
 import React from 'react';
 
-const CurrPair = ({name}) => {
+const CurrPair = ({name, value}) => {
     return (
         <div className={'currPair'}>
-            <p>name</p>
+            <p>{name} - {value}</p>
         </div>
     );
 };
