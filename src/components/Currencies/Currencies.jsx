@@ -5,6 +5,7 @@ import {useNavigate} from "react-router-dom";
 import LazyLoad from "../LazyLoad/LazyLoad";
 import {AnimatePresence, motion} from "framer-motion";
 import logo from '../../asseets/load.gif'
+import Offers from "../offers/Offers";
 
 const Currencies = () => {
 
@@ -17,7 +18,7 @@ const Currencies = () => {
        let t = setTimeout(() => {
 
             setLoading(false);
-        },2200);
+        },5500);
 
     }, [])
 
@@ -31,7 +32,7 @@ const Currencies = () => {
                 exit={{ opacity: 0 ,transition: { duration: 1 }}}
                 transition={{duration: .5}}
             >
-                {isLoading && <div  className={'blick'}>123</div> }
+                {isLoading && <LazyLoad /> }
             </motion.div>
                 </AnimatePresence>
 
@@ -40,7 +41,7 @@ const Currencies = () => {
        animate={{opacity:1}}
        transition={{duration: .5}}
        >
-            {!isLoading && 'CONTENT' }
+            {!isLoading && <Offers /> }
        </div>
             <button className={'button'} onClick={() => nav(-1)}>Prev</button>
         </>

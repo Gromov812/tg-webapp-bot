@@ -69,13 +69,13 @@ const [optionValue, setOptionValue] = useState('10000');
                 />
             </Form>
 
-            <button type={"submit"} className={'button'}>Найти предложения</button>
+
 
             <Link to={'/currencies'}>
-                <button className={'button'}>Currencies</button>
+                <Btn name={'Найти предложения'}></Btn>
             </Link>
-            <Btn onButtonClick = {onToggleMainButton} name = {'Main'}/>
-        <Btn onButtonClick = {onClose} name = {'Close'} />
+            <Btn onButtonClick = {onToggleMainButton} name = {'Главная'}/>
+        <Btn onButtonClick = {onClose} name = {'Закрыть'} />
             <Button variant={'primary'} >Btn</Button>
         </div>
     );

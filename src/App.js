@@ -6,6 +6,7 @@ import Header from "./components/header/Header";
 import {useTelegram} from "./Hooks/useTelegram";
 import {Link, Router, Route, BrowserRouter, Routes} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';import Currencies from "./components/Currencies/Currencies";
+import Offers from "./components/offers/Offers";
 
 function App() {
 
@@ -24,6 +25,9 @@ function App() {
 
         <Route path={'/currencies'}  element={
             <Currencies />
+        }></Route>
+        <Route path={'/offers'}  element={
+            <Offers />
         }></Route>
     </Routes>
 

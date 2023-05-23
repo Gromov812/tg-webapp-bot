@@ -1,0 +1,7 @@
+.offers__block {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 35px 10px;
+}
