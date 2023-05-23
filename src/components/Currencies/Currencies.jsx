@@ -1,54 +1,47 @@
-import React, {useEffect, useState} from 'react';
-import axios from "axios";
-import CurrPair from "./CurrPair";
+import React, {useLayoutEffect, useRef, useState} from 'react';
 import "./Currencies.css";
 import "../button/button.css";
 import {useNavigate} from "react-router-dom";
 import LazyLoad from "../LazyLoad/LazyLoad";
+import {AnimatePresence, motion} from "framer-motion";
 
 const Currencies = () => {
+
+    const ref = useRef();
 
     const [isLoading, setLoading] = useState(true);
 
     const nav = useNavigate();
         const [currPairsList, setCurrPairsList] = useState([]);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
        let t = setTimeout(() => {
-            // axios.get('https://open.er-api.com/v6/latest/USD')
-            //     .then(res => {
-            //         console.log(res)
-            //         setCurrPairsList(res.data.rates);
-            //     });
+
             setLoading(false);
-        },1500);
+        },2000);
 
     }, [])
 
-    // let pairsList = {};
-    //
-    // for (let el in currPairsList) {
-    //     pairsList[el] =  currPairsList[el];
-    // }
-    //  pairsList = Object.entries(pairsList)
-    //
-    // pairsList = pairsList.map((el,i) => {
-    //     console.log(el)
-    //     return (
-    //         <div>
-    //         <CurrPair key={i} name={el[0]} value={el[1]}/>
-    //         </div>
-    //     )})
 
     return (<>
+            <AnimatePresence>
+            <motion.div
 
-            {isLoading
-                ?
-                 <LazyLoad />
-                :
-               'CONTENT'
+                initial={{ opacity: 0 }}
+                animate={{opacity: 1}}
+                exit={{ opacity: 0 }}
+                transition={{duration: .5}}
+            >
+                {isLoading && <LazyLoad /> }
+            </motion.div>
+                </AnimatePresence>
 
-            }
+       <motion.div
+       initial={{opacity:0}}
+       animate={{opacity:1}}
+       >
+            {!isLoading && 'CONTENT' }
+       </motion.div>
             <button className={'button'} onClick={() => nav(-1)}>Prev</button>
         </>
     );
