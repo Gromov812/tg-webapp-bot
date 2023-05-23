@@ -15,7 +15,7 @@ const Currencies = () => {
             axios.get('https://open.er-api.com/v6/latest/USD')
                 .then(res => {
                     console.log(res)
-                    setCurrPairsList(res.data.rates);
+                    setCurrPairsList(res.data?.rates);
                 })
         },3000);
     return clearInterval(timeout);
@@ -32,7 +32,7 @@ const Currencies = () => {
         console.log(el)
         return (
             <div>
-            <CurrPair name={el[0]} value={el[1]}/>
+            <CurrPair key={i} name={el[0]} value={el[1]}/>
             </div>
         )})
 
