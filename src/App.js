@@ -1,10 +1,11 @@
 
 import './App.css';
 import {useEffect} from "react";
-import Button from "./components/button/Button";
 import Header from "./components/header/Header";
 import {useTelegram} from "./Hooks/useTelegram";
-
+import {Link, Router, Route, BrowserRouter, Routes} from "react-router-dom";
+import Button from "./components/button/Button";
+import Currencies from "./components/Currencies/Currencies";
 
 function App() {
 
@@ -17,11 +18,22 @@ function App() {
 
 
   return (
+      <BrowserRouter>
     <div className="App">
+
+    <Routes>
+        <Route path={'/currencies'} element={<Currencies />}></Route>
+    </Routes>
+
+        <Link to={'/currencies'}>
+            <button>Currencies</button>
+        </Link>
+
 
         <Header />
 
     </div>
+      </BrowserRouter>
   );
 }
 
