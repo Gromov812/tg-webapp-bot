@@ -1,6 +1,7 @@
 
 import './App.css';
 import {useEffect} from "react";
+import Button from "./components/button/button";
 
 console.log(window.Telegram);
 
@@ -21,7 +22,7 @@ function App() {
     <div className="App">
 
         <button onClick={onClose}>Close</button>
-
+        <Button />
     </div>
   );
 }
