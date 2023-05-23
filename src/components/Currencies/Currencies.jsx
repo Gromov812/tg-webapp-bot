@@ -2,9 +2,11 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import CurrPair from "./CurrPair";
 import "./Currencies.css";
+import {useNavigate} from "react-router-dom";
 
 const Currencies = () => {
 
+    const nav = useNavigate();;
         const [currPairsList, setCurrPairsList] = useState([]);
 
     useEffect(() => {
@@ -26,10 +28,12 @@ const Currencies = () => {
     //     return <CurrPair name={el} key={i} />
     // })
 
-    return (
+    return (<>
         <div>
             123123
         </div>
+        <button onClick={() => nav(-1)}>Prev</button>
+        </>
     );
 };
 
