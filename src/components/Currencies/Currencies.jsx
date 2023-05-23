@@ -43,7 +43,6 @@ const Currencies = () => {
        >
             {!isLoading && <Offers /> }
        </div>
-            <button className={'button'} onClick={() => nav(-1)}>Prev</button>
         </>
     );
 };
