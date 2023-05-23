@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {useTelegram} from "../../Hooks/useTelegram";
 import {Link} from "react-router-dom";
 import Button from 'react-bootstrap/Button';
+import Form from  'react-bootstrap/Form';
 import Btn from "../button/Button";
 import './Header.css';
 
@@ -35,15 +36,40 @@ const [optionValue, setOptionValue] = useState('10000');
         <div className={'bg'}>
             <h1>Hello, {user?.first_name}!</h1>
 
-            <label>До какой суммы искать предложения?
-            <select onChange={e => optionHandler(e)} name={'start_sum'}>
-                {options.map((el,i) => {
-                    return <option value={el.value}>{el.text}</option>
-                })}
+            {/*<label>До какой суммы искать предложения?*/}
+            {/*<select onChange={e => optionHandler(e)} name={'start_sum'}>*/}
+            {/*    {options.map((el,i) => {*/}
+            {/*        return <option value={el.value}>{el.text}</option>*/}
+            {/*    })}*/}
 
-            </select>
-            </label>
-                <button type={"submit"} className={'button'}>Найти предложения</button>
+            {/*</select>*/}
+            {/*</label>*/}
+
+            <Form.Select aria-label="Default select example" size="lg" onChange={(e) => console.log(e.target.value)}>
+                <option>До какой суммы искать предложения?</option>
+                <option value="1">До 10000 руб.</option>
+                <option value="2">До 20000 руб.</option>
+                <option value="3">До 30000 руб.</option>
+                <option value="4">До 40000 руб.</option>
+                <option value="5">До 50000 руб.</option>
+                <option value="6">Более 50000 руб.</option>
+            </Form.Select>
+
+            <Form>
+                <Form.Check
+                    type="switch"
+                    id="custom-switch"
+                    label="Без поручительства"
+                />
+                <Form.Check
+
+                    type="switch"
+                    label="Без паспорта"
+                    id="disabled-custom-switch"
+                />
+            </Form>
+
+            <button type={"submit"} className={'button'}>Найти предложения</button>
 
             <Link to={'/currencies'}>
                 <button className={'button'}>Currencies</button>
