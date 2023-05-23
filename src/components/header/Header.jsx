@@ -3,6 +3,8 @@ import React, {useEffect, useState} from 'react';
 import {useTelegram} from "../../Hooks/useTelegram";
 import {Link} from "react-router-dom";
 import Button from 'react-bootstrap/Button';
+import Btn from "../button/Button";
+import './Header.css';
 
 const Header = (props) => {
 
@@ -30,7 +32,7 @@ const [optionValue, setOptionValue] = useState('10000');
 
 
     return (
-        <div>
+        <div className={'bg'}>
             <h1>Hello, {user?.first_name}!</h1>
 
             <label>До какой суммы искать предложения?
@@ -46,9 +48,9 @@ const [optionValue, setOptionValue] = useState('10000');
             <Link to={'/currencies'}>
                 <button className={'button'}>Currencies</button>
             </Link>
-            <Button onButtonClick = {onToggleMainButton} name = {'Main'}/>
-        <Button onButtonClick = {onClose} name = {'Close'} />
-            <Button variant={'primary'}>BTN</Button>
+            <Btn onButtonClick = {onToggleMainButton} name = {'Main'}/>
+        <Btn onButtonClick = {onClose} name = {'Close'} />
+            <Button variant={'primary'} >Btn</Button>
         </div>
     );
 };

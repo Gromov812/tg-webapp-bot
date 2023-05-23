@@ -5,9 +5,7 @@ import {Suspense, useEffect} from "react";
 import Header from "./components/header/Header";
 import {useTelegram} from "./Hooks/useTelegram";
 import {Link, Router, Route, BrowserRouter, Routes} from "react-router-dom";
-import Button from "./components/button/Button";
-import Currencies from "./components/Currencies/Currencies";
-import LazyLoad from "./components/LazyLoad/LazyLoad";
+import 'bootstrap/dist/css/bootstrap.min.css';import Currencies from "./components/Currencies/Currencies";
 
 function App() {
 
