@@ -8,7 +8,7 @@ const Header = (props) => {
 const {user, onClose, tg, onToggleMainButton} = useTelegram();
     return (
         <div>
-            <h1>Hello, {user.first_name}!</h1>
+            <h1>Hello, {user?.first_name}!</h1>
             <Button onButtonClick = {onToggleMainButton} name = {'Main'}/>
         <Button onButtonClick = {onClose} name = {'Close'} />
         </div>
