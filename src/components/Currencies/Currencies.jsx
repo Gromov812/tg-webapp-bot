@@ -1,4 +1,4 @@
-import React, {useLayoutEffect, useRef, useState} from 'react';
+import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
 import "./Currencies.css";
 import "../button/button.css";
 import {useNavigate} from "react-router-dom";
@@ -8,17 +8,16 @@ import logo from '../../asseets/load.gif'
 
 const Currencies = () => {
 
-    const ref = useRef();
 
     const [isLoading, setLoading] = useState(true);
 
     const nav = useNavigate();
 
-    useLayoutEffect(() => {
+    useEffect(() => {
        let t = setTimeout(() => {
 
             setLoading(false);
-        },2000);
+        },2200);
 
     }, [])
 
@@ -29,20 +28,20 @@ const Currencies = () => {
 
                 initial={{ opacity: 0 }}
                 animate={{opacity: 1}}
-                exit={{ opacity: 0 }}
+                exit={{ opacity: 0 ,transition: { duration: 1 }}}
                 transition={{duration: .5}}
             >
-                {isLoading && <img src={logo} alt="" / > }
+                {isLoading && <div  className={'blick'}>123</div> }
             </motion.div>
                 </AnimatePresence>
 
-       <motion.div
+       <div
        initial={{opacity:0}}
        animate={{opacity:1}}
        transition={{duration: .5}}
        >
             {!isLoading && 'CONTENT' }
-       </motion.div>
+       </div>
             <button className={'button'} onClick={() => nav(-1)}>Prev</button>
         </>
     );
