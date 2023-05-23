@@ -4,6 +4,7 @@ import "../button/button.css";
 import {useNavigate} from "react-router-dom";
 import LazyLoad from "../LazyLoad/LazyLoad";
 import {AnimatePresence, motion} from "framer-motion";
+import logo from '../../asseets/load.gif'
 
 const Currencies = () => {
 
@@ -12,7 +13,6 @@ const Currencies = () => {
     const [isLoading, setLoading] = useState(true);
 
     const nav = useNavigate();
-        const [currPairsList, setCurrPairsList] = useState([]);
 
     useLayoutEffect(() => {
        let t = setTimeout(() => {
@@ -32,13 +32,14 @@ const Currencies = () => {
                 exit={{ opacity: 0 }}
                 transition={{duration: .5}}
             >
-                {isLoading && <LazyLoad /> }
+                {isLoading && <img src={logo} alt="" / > }
             </motion.div>
                 </AnimatePresence>
 
        <motion.div
        initial={{opacity:0}}
        animate={{opacity:1}}
+       transition={{duration: .5}}
        >
             {!isLoading && 'CONTENT' }
        </motion.div>
