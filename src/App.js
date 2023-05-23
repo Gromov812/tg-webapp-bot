@@ -1,5 +1,6 @@
 
 import './App.css';
+import './components/button/button.css'
 import {Suspense, useEffect} from "react";
 import Header from "./components/header/Header";
 import {useTelegram} from "./Hooks/useTelegram";
@@ -28,9 +29,7 @@ function App() {
         }></Route>
     </Routes>
 
-        <Link to={'/currencies'}>
-            <button>Currencies</button>
-        </Link>
+
 
 
         <Header />
