@@ -19,7 +19,7 @@ const LazyLoad = () => {
     return (
         <div className={"loading_stripe"}>
             {/* <CProgress height={35} className="mb-3"> */}
-                <ProgressBar  animated height={35} now={progress} label={`${progress}%`} color={progress < 85 ? "info" : "success"} />
+                <ProgressBar style={{height:'3rem'}} animated height={35} now={progress} label={`${progress}%`} color={progress < 85 ? "info" : "success"} />
             {/* </CProgress> */}
         </div>
     );

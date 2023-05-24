@@ -37,40 +37,29 @@ const {user, onClose, tg, onToggleMainButton} = useTelegram();
             {user?.first_name && <h1>Hello, {user?.first_name}!</h1>}
 
             <Carousel fade>
-  <Carousel.Item interval={700}>
+  <Carousel.Item style={{'max-height': '200px'}} interval={1700}>
     <img
       className="d-block w-100"
       src="https://kredit-on.ru/wp-content/uploads/f/1/b/f1b1c6027c823d7f0062ff97f532e881.jpeg"
       alt="First slide"
     />
-    <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-    </Carousel.Caption>
+
   </Carousel.Item>
-  <Carousel.Item interval={700}>
+  <Carousel.Item style={{'max-height': '200px'}} interval={1700}>
     <img
       className="d-block w-100"
       src="https://svarkagid.com/wp-content/uploads/2020/04/s1200-5.jpg"
       alt="Second slide"
     />
 
-    <Carousel.Caption>
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </Carousel.Caption>
   </Carousel.Item>
-  <Carousel.Item interval={700}>
+  <Carousel.Item style={{'max-height': '200px'}} interval={1700}>
     <img
       className="d-block w-100"
       src="https://kredit-on.ru/wp-content/uploads/a/b/4/ab4813344cc3ad40a9b86aae430160da.jpeg"
       alt="Third slide"
     />
 
-    <Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-    </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
 
