@@ -1,5 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
-import ProgressBar from 'react-bootstrap/ProgressBar';
+import React, {useEffect, useState} from 'react';
 import {CProgressBar,CProgress} from '@coreui/bootstrap-react';
 
 const LazyLoad = () => {
