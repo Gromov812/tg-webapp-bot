@@ -1,7 +1,7 @@
 
 import './App.css';
 import './components/button/button.css'
-import {Suspense, useEffect} from "react";
+import {Suspense, useEffect, useState} from "react";
 import Header from "./components/header/Header";
 import {useTelegram} from "./Hooks/useTelegram";
 import {Link, Router, Route, BrowserRouter, Routes} from "react-router-dom";
@@ -11,30 +11,35 @@ import Offers from "./components/offers/Offers";
 function App() {
 
     const { tg } = useTelegram();
-
+    const [inputChose, setInputChose] = useState({});
 
     useEffect(() => {
-        tg.ready();
+        console.log(inputChose)
+        // tg.ready();
     },[])
 
 
   return (
     <div className="App">
-
+        <Header setInputChose={setInputChose}  />
     <Routes>
 
         <Route path={'/currencies'}  element={
             <Currencies />
-        }></Route>
+        }>
+
+        </Route>
         <Route path={'/offers'}  element={
             <Offers />
-        }></Route>
+        }>
+
+        </Route>
     </Routes>
 
 
 
 
-        <Header />
+
 
     </div>
   );

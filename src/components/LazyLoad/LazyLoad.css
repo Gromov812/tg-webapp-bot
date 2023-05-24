@@ -5,3 +5,6 @@
 .progress_bar {
     height: 40px;
 }
+.loading_stripe {
+    padding: 10px 15px;
+}

@@ -4,10 +4,9 @@ import "../button/button.css";
 import {useNavigate} from "react-router-dom";
 import LazyLoad from "../LazyLoad/LazyLoad";
 import {AnimatePresence, motion} from "framer-motion";
-import logo from '../../asseets/load.gif'
 import Offers from "../offers/Offers";
 
-const Currencies = () => {
+const Currencies = ({setInputChose}) => {
 
 
     const [isLoading, setLoading] = useState(true);

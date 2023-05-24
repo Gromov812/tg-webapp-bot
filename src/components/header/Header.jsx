@@ -4,32 +4,29 @@ import {useTelegram} from "../../Hooks/useTelegram";
 import {Link} from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Form from  'react-bootstrap/Form';
-import Btn from "../button/Button";
+
 import './Header.css';
+import {CFormSwitch} from "@coreui/bootstrap-react";
 
-const Header = (props) => {
+const Header = ({setInputChose}) => {
 
-    useEffect(() => {
-
-    },[])
 
 
 const {user, onClose, tg, onToggleMainButton} = useTelegram();
-const [optionValue, setOptionValue] = useState('10000');
     const optionHandler = (e) => {
-    e.preventDefault();
-    setOptionValue(e.target.value)
-        console.log(e.target.value);
-    }
+        console.log(e)
+        let obj = {};
+         if(e.target.localName != 'select') {
 
-    const options = [
-        {text: 'До 10000 руб.', value: 10000},
-        {text: 'До 20000 руб.', value: 20000},
-        {text: 'До 30000 руб.', value: 30000},
-        {text: 'До 40000 руб.', value: 40000},
-        {text: 'До 50000 руб.', value: 50000},
-        {text: 'Более 50000 руб.', value: 'more'},
-    ];
+             obj[e.target.labels[0].innerText] = e.target.checked;
+
+         }
+         else {
+             obj['sum'] = e.target.value;
+         }
+        setInputChose(obj)
+
+    }
 
 
     return (<>
@@ -39,34 +36,27 @@ const [optionValue, setOptionValue] = useState('10000');
             </div>
             <h1>Hello, {user?.first_name}!</h1>
 
-            {/*<label>До какой суммы искать предложения?*/}
-            {/*<select onChange={e => optionHandler(e)} name={'start_sum'}>*/}
-            {/*    {options.map((el,i) => {*/}
-            {/*        return <option value={el.value}>{el.text}</option>*/}
-            {/*    })}*/}
-
-            {/*</select>*/}
-            {/*</label>*/}
     <div className={"content__block"}>
-            <Form.Select aria-label="Default select example" size="lg" onChange={(e) => console.log(e.target.value)}>
+            <Form.Select aria-label="Default select example" size="xl" onChange={(e) => optionHandler(e)}>
                 <option>До какой суммы искать предложения?</option>
-                <option value="1">До 10000 руб.</option>
-                <option value="2">До 20000 руб.</option>
-                <option value="3">До 30000 руб.</option>
-                <option value="4">До 40000 руб.</option>
-                <option value="5">До 50000 руб.</option>
-                <option value="6">Более 50000 руб.</option>
+                <option value="10000">До 10000 руб.</option>
+                <option value="20000">До 20000 руб.</option>
+                <option value="30000">До 30000 руб.</option>
+                <option value="40000">До 40000 руб.</option>
+                <option value="50000">До 50000 руб.</option>
+                <option value="more">Более 50000 руб.</option>
             </Form.Select>
 
+        {/*<CFormSwitch onClick={(e) => optionHandler(e)} size="xl" label="Без поручительства" />*/}
             <Form>
                 <Form.Check
-
+                    onClick={(e) => optionHandler(e)}
                     type="switch"
                     id="custom-switch"
                     label="Без поручительства"
                 />
                 <Form.Check
-
+                    onClick={(e) => optionHandler(e)}
                     type="switch"
                     label="Без паспорта"
                     id="disabled-custom-switch"
