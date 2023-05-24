@@ -4,7 +4,8 @@ import Button from "react-bootstrap/Button";
 import {motion} from "framer-motion";
 import './Offers.css';
 import React, {useRef} from "react";
-
+import Badge from 'react-bootstrap/Badge';
+import { CBadge } from '@coreui/bootstrap-react';
 
 const Offer = ({delay}) => {
 
@@ -17,23 +18,23 @@ const Offer = ({delay}) => {
         animate={{opacity: 1, x: 0}}
         transition={{duration: 1.3, delay: delay}}
     >
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '22rem', margin:'15px 0'}}>
             <Card.Img variant="top" src="https://avatars.mds.yandex.net/get-altay/4365916/2a0000017914e032d1c7a0a1d03586577cd9/XXXL" />
             <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title><h3>Займ под 2% в месяц</h3></Card.Title>
                 <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
+                    Выгодный займ для приобритения бытовых приборов, ремонта автотранспорта или погашении предыдущих  задолженностей
                 </Card.Text>
             </Card.Body>
             <ListGroup className="list-group-flush">
-                <ListGroup.Item>Cras justo odio</ListGroup.Item>
-                <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-                <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                <ListGroup.Item>Сумма: <b>до 300 000 рублей</b></ListGroup.Item>
+                <ListGroup.Item>Ставка: <Badge bg="success"> 2% в месяц</Badge></ListGroup.Item>
+                <ListGroup.Item>Срок: <b>от 1 до 20 месяцев</b></ListGroup.Item>
+                <ListGroup.Item>Паспорт: <b>не требуется</b></ListGroup.Item>
             </ListGroup>
             <Card.Body>
                 <div className="d-grid gap-2">
-                <Button variant={"primary"} >Запросить займ</Button>
+                <Button variant={"success"} >Запросить займ</Button>
                     </div>
             </Card.Body>
         </Card>

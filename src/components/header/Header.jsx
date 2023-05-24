@@ -1,12 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 
 import {useTelegram} from "../../Hooks/useTelegram";
-import {Link} from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Form from  'react-bootstrap/Form';
-
+import logo from '../../asseets/logo.png';
 import './Header.css';
-import {CFormSwitch} from "@coreui/bootstrap-react";
 import Currencies from '../Currencies/Currencies';
 
 const Header = ({setInputChose}) => {
@@ -33,10 +31,10 @@ const {user, onClose, tg, onToggleMainButton} = useTelegram();
 
     return (<>
         <div className={'bg'}>
-            <div className={"header__nav"}>
-                <div className={"menu_btn"}></div>
+            <div className={"header__block"}></div>
+            <div className={"header__block_pic"}>
             </div>
-            <h1>Hello, {user?.first_name}!</h1>
+            {user?.first_name && <h1>Hello, {user?.first_name}!</h1>}
 
     <div className={"content__block"}>
             <Form.Select aria-label="Default select example" size="xl" onChange={(e) => optionHandler(e)}>

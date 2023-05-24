@@ -8,11 +8,18 @@
     flex-direction: column;
     gap: 20px 0;
 }
-.header__nav {
+.header__block_pic {
     width: 100%;
     height: 35px;
-    background: #1C2837;
+    background: url('../../asseets/logo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
     margin: 0 0 20px 0;
+    
+}
+.header__block {
+    padding: 10px 0;
 }
 .link {
     text-transform: none;
