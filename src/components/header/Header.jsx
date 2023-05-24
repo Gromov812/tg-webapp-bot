@@ -43,7 +43,6 @@ const {user, onClose, tg, onToggleMainButton} = useTelegram();
       src="https://kredit-on.ru/wp-content/uploads/f/1/b/f1b1c6027c823d7f0062ff97f532e881.jpeg"
       alt="First slide"
     />
-
   </Carousel.Item>
   <Carousel.Item style={{'max-height': '200px'}} interval={1700}>
     <img
@@ -51,7 +50,6 @@ const {user, onClose, tg, onToggleMainButton} = useTelegram();
       src="https://svarkagid.com/wp-content/uploads/2020/04/s1200-5.jpg"
       alt="Second slide"
     />
-
   </Carousel.Item>
   <Carousel.Item style={{'max-height': '200px'}} interval={1700}>
     <img
@@ -59,7 +57,6 @@ const {user, onClose, tg, onToggleMainButton} = useTelegram();
       src="https://kredit-on.ru/wp-content/uploads/a/b/4/ab4813344cc3ad40a9b86aae430160da.jpeg"
       alt="Third slide"
     />
-
   </Carousel.Item>
 </Carousel>
 
