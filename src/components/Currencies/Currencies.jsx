@@ -14,7 +14,7 @@ const Currencies = ({setFindOffers}) => {
     useEffect(() => {
        let t = setTimeout(() => {
 
-            setLoading(false);
+            // setLoading(false);
         },5500);
 
         return () => clearTimeout(t);

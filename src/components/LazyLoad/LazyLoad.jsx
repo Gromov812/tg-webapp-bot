@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {CProgressBar,CProgress} from '@coreui/bootstrap-react';
-
+import ProgressBar from 'react-bootstrap/ProgressBar'
 const LazyLoad = () => {
 
     const [progress, setProgress] = useState(1);
@@ -19,9 +19,9 @@ const LazyLoad = () => {
 
     return (
         <div className={"loading_stripe"}>
-            <CProgress height={35} className="mb-3">
-                <CProgressBar  animated height={35} variant="striped" value={progress} color={progress < 85 ? "info" : "success"} >{progress}%</CProgressBar>
-            </CProgress>
+            {/* <CProgress height={35} className="mb-3"> */}
+                <ProgressBar  animated height={35} now={progress} label={`${progress}%`} color={progress < 85 ? "info" : "success"} />
+            {/* </CProgress> */}
         </div>
     );
 };
