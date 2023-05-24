@@ -1,16 +1,15 @@
 import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
 import Button from "react-bootstrap/Button";
-import {motion} from "framer-motion";
 import './Offers.css';
 import React from "react";
-import {useNavigate} from "react-router-dom";
 import Offer from "./Offer";
-import Btn from "../button/Button";
 
-const Offers = () => {
+const Offers = ({setFindOffers, setLoading}) => {
 
-let nav = useNavigate();
+    const backButtonHandler = () => {
+        setLoading(true);
+        setFindOffers(false);
+    } 
 
     return ( <>
 <div className={'offers__block'}>
@@ -22,7 +21,7 @@ let nav = useNavigate();
 
 
 </div>
-    <Button onClick={() => nav(-1)} variant={"primary"}>Назад</Button>
+    <Button onClick={backButtonHandler} variant={"primary"}>Назад</Button>
         </>
     );
 };

@@ -1,17 +1,15 @@
 import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
 import "./Currencies.css";
 import "../button/button.css";
-import {useNavigate} from "react-router-dom";
 import LazyLoad from "../LazyLoad/LazyLoad";
 import {AnimatePresence, motion} from "framer-motion";
 import Offers from "../offers/Offers";
 
-const Currencies = ({setInputChose}) => {
+const Currencies = ({setFindOffers}) => {
 
 
     const [isLoading, setLoading] = useState(true);
 
-    const nav = useNavigate();
 
     useEffect(() => {
        let t = setTimeout(() => {
@@ -19,6 +17,7 @@ const Currencies = ({setInputChose}) => {
             setLoading(false);
         },5500);
 
+        return () => clearTimeout(t);
     }, [])
 
 
@@ -40,7 +39,7 @@ const Currencies = ({setInputChose}) => {
        animate={{opacity:1}}
        transition={{duration: .5}}
        >
-            {!isLoading && <Offers /> }
+            {!isLoading && <Offers setLoading={setLoading} setFindOffers={setFindOffers}/> }
        </div>
         </>
     );

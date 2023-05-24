@@ -7,9 +7,11 @@ import Form from  'react-bootstrap/Form';
 
 import './Header.css';
 import {CFormSwitch} from "@coreui/bootstrap-react";
+import Currencies from '../Currencies/Currencies';
 
 const Header = ({setInputChose}) => {
 
+const [findOffers, setFindOffers] = useState(false);
 
 
 const {user, onClose, tg, onToggleMainButton} = useTelegram();
@@ -65,11 +67,13 @@ const {user, onClose, tg, onToggleMainButton} = useTelegram();
 
 
 
-            <Link className={'link'} to={'/currencies'}>
+
                 <div className="d-grid gap-2">
-                <Button pref={'qwe'} variant={'success'} size={"lg"}>Найти предложения</Button>
+                <Button onClick={() => setFindOffers(true)} pref={'qwe'} variant={'success'} size={"lg"}>Найти предложения</Button>
                 </div>
-            </Link>
+
+        {findOffers && <Currencies setFindOffers={setFindOffers}/>
+        }
 
         <Button variant={"primary"} onButtonClick = {onToggleMainButton} >Главная</Button>
         <Button onButtonClick = {onClose} >Закрыть</Button>

@@ -18,17 +18,16 @@ function App() {
         // tg.ready();
     },[])
 
-
   return (
     <div className="App">
         <Header setInputChose={setInputChose}  />
     <Routes>
 
-        <Route path={'/currencies'}  element={
-            <Currencies />
-        }>
+        {/*<Route path={'/currencies'}  element={*/}
+        {/*    <Currencies />*/}
+        {/*}>*/}
 
-        </Route>
+        {/* </Route> */}
         <Route path={'/offers'}  element={
             <Offers />
         }>
