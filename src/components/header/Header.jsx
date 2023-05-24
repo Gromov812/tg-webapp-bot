@@ -3,7 +3,6 @@ import React, { useState} from 'react';
 import {useTelegram} from "../../Hooks/useTelegram";
 import Button from 'react-bootstrap/Button';
 import Form from  'react-bootstrap/Form';
-import logo from '../../asseets/logo.png';
 import './Header.css';
 import Currencies from '../Currencies/Currencies';
 
@@ -47,7 +46,6 @@ const {user, onClose, tg, onToggleMainButton} = useTelegram();
                 <option value="more">Более 50000 руб.</option>
             </Form.Select>
 
-        {/*<CFormSwitch onClick={(e) => optionHandler(e)} size="xl" label="Без поручительства" />*/}
             <Form>
                 <Form.Check
                     onClick={(e) => optionHandler(e)}

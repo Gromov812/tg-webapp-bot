@@ -1,4 +1,4 @@
-import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import "./Currencies.css";
 import "../button/button.css";
 import LazyLoad from "../LazyLoad/LazyLoad";

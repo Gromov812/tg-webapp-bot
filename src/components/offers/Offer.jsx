@@ -5,7 +5,6 @@ import {motion} from "framer-motion";
 import './Offers.css';
 import React, {useRef} from "react";
 import Badge from 'react-bootstrap/Badge';
-import { CBadge } from '@coreui/bootstrap-react';
 
 const Offer = ({delay}) => {
 
@@ -28,7 +27,7 @@ const Offer = ({delay}) => {
             </Card.Body>
             <ListGroup className="list-group-flush">
                 <ListGroup.Item>Сумма: <b>до 300 000 рублей</b></ListGroup.Item>
-                <ListGroup.Item>Ставка: <Badge bg="success"> 2% в месяц</Badge></ListGroup.Item>
+                <ListGroup.Item>Ставка: <Badge bg="success" style={{'font-size': '0.9rem'}}> 2% в месяц</Badge></ListGroup.Item>
                 <ListGroup.Item>Срок: <b>от 1 до 20 месяцев</b></ListGroup.Item>
                 <ListGroup.Item>Паспорт: <b>не требуется</b></ListGroup.Item>
             </ListGroup>
