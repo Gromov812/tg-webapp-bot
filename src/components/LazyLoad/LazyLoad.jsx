@@ -17,8 +17,6 @@ const LazyLoad = () => {
         return () => clearInterval(intervalId);
     }, []);
 
-
-
     return (
         <div className={"loading_stripe"}>
             <CProgress height={35} className="mb-3">
