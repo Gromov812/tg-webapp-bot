@@ -96,8 +96,8 @@ const {user, onClose, tg, onToggleMainButton} = useTelegram();
         {findOffers && <Currencies setFindOffers={setFindOffers}/>
         }
 
-        <Button variant={"primary"} onButtonClick = {onToggleMainButton} >Главная</Button>
-        <Button onButtonClick = {onClose} >Закрыть</Button>
+        <Button variant={"primary"} onClick = {onToggleMainButton} >Главная</Button>
+        <Button onClick = {onClose} >Закрыть</Button>
         </div>
         </div>
         </>
