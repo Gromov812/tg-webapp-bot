@@ -1,3 +1,16 @@
 .bg {
-    background: #0d6f96;
+    background: #FFF;
+
+}
+.content__block {
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+}
+.header__nav {
+    width: 100%;
+    height: 35px;
+    background: #1C2837;
+    margin: 0 0 20px 0;
 }

@@ -3,12 +3,15 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from "react-bootstrap/Button";
 import {motion} from "framer-motion";
 import './Offers.css';
-import React from "react";
+import React, {useRef} from "react";
 
 
 const Offer = ({delay}) => {
 
+    const scrollRef = useRef(null)
+
     return (
+
     <motion.div
         initial={{opacity:0, x:-100}}
         animate={{opacity: 1, x: 0}}

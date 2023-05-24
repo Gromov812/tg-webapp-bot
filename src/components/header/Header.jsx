@@ -32,8 +32,11 @@ const [optionValue, setOptionValue] = useState('10000');
     ];
 
 
-    return (
+    return (<>
         <div className={'bg'}>
+            <div className={"header__nav"}>
+                <div className={"menu_btn"}></div>
+            </div>
             <h1>Hello, {user?.first_name}!</h1>
 
             {/*<label>До какой суммы искать предложения?*/}
@@ -44,7 +47,7 @@ const [optionValue, setOptionValue] = useState('10000');
 
             {/*</select>*/}
             {/*</label>*/}
-
+    <div className={"content__block"}>
             <Form.Select aria-label="Default select example" size="lg" onChange={(e) => console.log(e.target.value)}>
                 <option>До какой суммы искать предложения?</option>
                 <option value="1">До 10000 руб.</option>
@@ -57,6 +60,7 @@ const [optionValue, setOptionValue] = useState('10000');
 
             <Form>
                 <Form.Check
+size={20}
                     type="switch"
                     id="custom-switch"
                     label="Без поручительства"
@@ -78,6 +82,8 @@ const [optionValue, setOptionValue] = useState('10000');
         <Btn onButtonClick = {onClose} name = {'Закрыть'} />
             <Button variant={'primary'} >Btn</Button>
         </div>
+        </div>
+        </>
     );
 };
 

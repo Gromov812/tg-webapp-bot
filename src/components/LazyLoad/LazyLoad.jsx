@@ -22,7 +22,7 @@ const LazyLoad = () => {
 
     return (
         <div>
-            <ProgressBar animated now={progress} variant={progress < 85 ? "info" : "success"} label={`${progress}%`}/>;
+            <ProgressBar animated now={progress} variant={progress < 85 ? "info" : "success"} label={`${progress}%`}/>
         </div>
     );
 };

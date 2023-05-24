@@ -12,16 +12,18 @@ const Offers = () => {
 
 let nav = useNavigate();
 
-    return (
+    return ( <>
 <div className={'offers__block'}>
     <Offer delay={0}/>
-    <Offer delay={0.3}/>
-    <Offer delay={0.6} />
-    <Offer delay={0.9}/>
+    <Offer delay={0.4}/>
+    <Offer delay={0.8} />
     <Offer delay={1.2}/>
-    <Btn onClick={() => nav(-1)} name = {'Назад'}></Btn>
+    <Offer delay={1.6}/>
+
 
 </div>
+    <Button onClick={() => nav(-1)} variant={"primary"}>Назад</Button>
+        </>
     );
 };
 
