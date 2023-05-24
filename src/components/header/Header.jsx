@@ -60,7 +60,7 @@ const [optionValue, setOptionValue] = useState('10000');
 
             <Form>
                 <Form.Check
-size={20}
+
                     type="switch"
                     id="custom-switch"
                     label="Без поручительства"
@@ -75,12 +75,14 @@ size={20}
 
 
 
-            <Link to={'/currencies'}>
-                <Btn name={'Найти предложения'}></Btn>
+            <Link className={'link'} to={'/currencies'}>
+                <div className="d-grid gap-2">
+                <Button pref={'qwe'} variant={'success'} size={"lg"}>Найти предложения</Button>
+                </div>
             </Link>
-            <Btn onButtonClick = {onToggleMainButton} name = {'Главная'}/>
-        <Btn onButtonClick = {onClose} name = {'Закрыть'} />
-            <Button variant={'primary'} >Btn</Button>
+
+        <Button variant={"primary"} onButtonClick = {onToggleMainButton} >Главная</Button>
+        <Button onButtonClick = {onClose} >Закрыть</Button>
         </div>
         </div>
         </>

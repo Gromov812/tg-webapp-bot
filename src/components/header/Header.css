@@ -14,3 +14,7 @@
     background: #1C2837;
     margin: 0 0 20px 0;
 }
+.link {
+    text-transform: none;
+    text-decoration: none;
+}
