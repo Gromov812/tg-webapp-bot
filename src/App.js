@@ -15,7 +15,7 @@ function App() {
 
     useEffect(() => {
         console.log(inputChose)
-        // tg.ready();
+        tg.ready();
     },[])
 
   return (

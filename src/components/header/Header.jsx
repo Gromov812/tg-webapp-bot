@@ -81,7 +81,7 @@ const Header = () => {
       <Main />
 
       <Form.Label>Select range: {selectRange}</Form.Label>
-      <Form.Range value={selectRange} onChange={(e) => setSelectRange(e.target.value)} />
+      <Form.Range style={{'padding': '0 10px'}} value={selectRange} onChange={(e) => setSelectRange(e.target.value)} />
 
       <div className={"content__block"}>
         <Form.Select aria-label="Default select example" size="xl">
