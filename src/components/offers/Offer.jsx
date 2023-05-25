@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import Badge from 'react-bootstrap/Badge';
 import  ModalBlock  from './Modal';
 
-const Offer = ({delay, title}) => {
+const Offer = ({delay, title, offerOptions}) => {
 
 const [showModal, setShowModal] = useState(false);
 
@@ -21,6 +21,14 @@ const [showModal, setShowModal] = useState(false);
         <Card style={{ width: '22rem', margin:'15px 0'}}>
             <Card.Img variant="top" src="https://avatars.mds.yandex.net/get-altay/4365916/2a0000017914e032d1c7a0a1d03586577cd9/XXXL" />
             <Card.Body>
+                {
+                    offerOptions?.text &&
+                    <> 
+                    <div style={{'float': 'right'}}><Badge bg={offerOptions.bg}>{offerOptions.text}</Badge></div>
+                <br />
+                </>
+                }
+               
                 <Card.Title><h3>Займ под 2% в месяц</h3></Card.Title>
                 <Card.Text>
                     Выгодный займ для приобритения бытовых приборов, ремонта автотранспорта или погашении предыдущих  задолженностей

@@ -27,9 +27,9 @@ const Offers = ({setFindOffers, setLoading, navRef}) => {
     return ( <>
 <div className={'offers__block'} ref={ref}>
 
-    <Offer delay={0} title={1}/>
+    <Offer delay={0} title={1} offerOptions={{text: 'Ставка 0% первые 14 дней', bg: 'info'}} />
     <Offer delay={0.4} title={2}/>
-    <Offer delay={0.8} title={3}/>
+    <Offer delay={0.8} title={3} offerOptions={{text: 'Ставка 0% первые 14 дней', bg: 'warning'}}/>
     <Offer delay={1.2} title={4}/>
     <Offer delay={1.6} title={5}/>
 
