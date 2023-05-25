@@ -8,7 +8,6 @@ import Badge from 'react-bootstrap/Badge';
 
 const Offer = ({delay}) => {
 
-    const scrollRef = useRef(null)
 
     return (
 

@@ -6,28 +6,22 @@ import Form from  'react-bootstrap/Form';
 import Carousel from 'react-bootstrap/Carousel';
 import './Header.css';
 import Currencies from '../Currencies/Currencies';
+import { Main } from '../Main/Main';
 
-const Header = ({setInputChose}) => {
+const Header = () => {
 
 const [findOffers, setFindOffers] = useState(false);
 
 
+
+
 const {user, onClose, tg, onToggleMainButton} = useTelegram();
-    const optionHandler = (e) => {
-        console.log(e)
-        let obj = {};
-         if(e.target.localName != 'select') {
 
-             obj[e.target.labels[0].innerText] = e.target.checked;
 
-         }
-         else {
-             obj['sum'] = e.target.value;
-         }
-        setInputChose(obj)
-
+   function findOffersButtonHandler() {
+        setFindOffers(true)
+     
     }
-
 
     return (<>
         <div className={'bg'}>
@@ -60,8 +54,10 @@ const {user, onClose, tg, onToggleMainButton} = useTelegram();
   </Carousel.Item>
 </Carousel>
 
+      <Main />
+
     <div className={"content__block"}>
-            <Form.Select aria-label="Default select example" size="xl" onChange={(e) => optionHandler(e)}>
+            <Form.Select aria-label="Default select example" size="xl">
                 <option>До какой суммы искать предложения?</option>
                 <option value="10000">До 10000 руб.</option>
                 <option value="20000">До 20000 руб.</option>
@@ -73,13 +69,13 @@ const {user, onClose, tg, onToggleMainButton} = useTelegram();
 
             <Form>
                 <Form.Check
-                    onClick={(e) => optionHandler(e)}
+                size='20'
                     type="switch"
                     id="custom-switch"
                     label="Без поручительства"
                 />
                 <Form.Check
-                    onClick={(e) => optionHandler(e)}
+                size={"lg"}
                     type="switch"
                     label="Без паспорта"
                     id="disabled-custom-switch"
@@ -90,7 +86,7 @@ const {user, onClose, tg, onToggleMainButton} = useTelegram();
 
 
                 <div className="d-grid gap-2">
-                <Button onClick={() => setFindOffers(true)} pref={'qwe'} variant={'success'} size={"lg"}>Найти предложения</Button>
+                <Button onClick={findOffersButtonHandler} pref={'qwe'} variant={'success'} size={"lg"}>Найти предложения</Button>
                 </div>
 
         {findOffers && <Currencies setFindOffers={setFindOffers}/>
