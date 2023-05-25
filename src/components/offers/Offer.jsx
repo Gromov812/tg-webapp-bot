@@ -3,11 +3,13 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from "react-bootstrap/Button";
 import {motion} from "framer-motion";
 import './Offers.css';
-import React, {useRef} from "react";
+import React, { useState } from "react";
 import Badge from 'react-bootstrap/Badge';
+import  ModalBlock  from './Modal';
 
-const Offer = ({delay}) => {
+const Offer = ({delay, title}) => {
 
+const [showModal, setShowModal] = useState(false);
 
     return (
 
@@ -31,11 +33,12 @@ const Offer = ({delay}) => {
                 <ListGroup.Item>Паспорт: <b>не требуется</b></ListGroup.Item>
             </ListGroup>
             <Card.Body>
-                <div className="d-grid gap-2">
-                <Button variant={"success"} >Запросить займ</Button>
+                <div className="buttons__row">
+                <Badge onClick={()=> setShowModal(true)} bg="secondary" style={{display: 'flex', 'align-items': 'center', 'font-weight': '400'}}>Подробнее</Badge> <Button style={{flex: '1'}} variant={"success"} >Запросить займ</Button>
                     </div>
             </Card.Body>
         </Card>
+        {showModal && <ModalBlock setShowModal={setShowModal} show={showModal} title={title} />}
         </motion.div>
 
     );

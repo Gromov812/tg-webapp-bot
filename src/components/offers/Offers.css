@@ -9,3 +9,7 @@
     font-size: 1.3rem;
     font-weight: 700;
 }
+.buttons__row {
+    display: flex;
+    gap: 0 5px;
+}
