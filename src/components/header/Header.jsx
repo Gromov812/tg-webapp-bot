@@ -15,7 +15,8 @@ import { BestOffers } from '../offers/BestOffers';
 const Header = () => {
 
   const [findOffers, setFindOffers] = useState(false);
-  const [selectRange, setSelectRange] = useState(0);
+  const [selectRangeSumma, setSelectRangeSumma] = useState(0);
+  const [selectRangeDays, setSelectRangeDays] = useState(0);
 
 
 
@@ -80,8 +81,10 @@ const Header = () => {
 
       <Main />
 
-      <Form.Label>Select range: {selectRange}</Form.Label>
-      <Form.Range style={{'padding': '0 10px'}} value={selectRange} onChange={(e) => setSelectRange(e.target.value)} />
+      <Form.Label>Сумма: {selectRangeSumma} руб.</Form.Label>
+      <Form.Range style={{'padding': '0 10px'}} onChange={(e) => setSelectRangeSumma(v =>  e.target.value*1000)} />
+      <Form.Label>Срок: {selectRangeDays} дней</Form.Label>
+      <Form.Range max={30} style={{'padding': '0 10px'}} value={selectRangeDays} onChange={(e) => setSelectRangeDays(e.target.value)} />
 
       <div className={"content__block"}>
         <Form.Select aria-label="Default select example" size="xl">
