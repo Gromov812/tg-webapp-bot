@@ -1,20 +1,31 @@
-import Card from 'react-bootstrap/Card';
+import { HashLink as Link } from 'react-router-hash-link';
 import Button from "react-bootstrap/Button";
 import './Offers.css';
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Offer from "./Offer";
+import { useNavigate } from 'react-router-dom';
 
-const Offers = ({setFindOffers, setLoading}) => {
+const Offers = ({setFindOffers, setLoading, navRef}) => {
 
+
+    let ref = useRef();
+
+
+    useEffect(() => {
+         ref.current.scrollIntoView({ behavior: "smooth" });
+
+        console.log(`RENDER!`);
+    
+    }, [])
 
     const backButtonHandler = () => {
         setLoading(true);
         setFindOffers(false);
+        navRef.current.scrollIntoView({ behavior: "smooth" })
     } 
 
     return ( <>
-
-<div className={'offers__block'}>
+<div className={'offers__block'} ref={ref}>
 
     <Offer delay={0} title={1}/>
     <Offer delay={0.4} title={2}/>
