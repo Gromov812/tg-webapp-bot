@@ -10,11 +10,12 @@ import './Header.css';
 import Currencies from '../Currencies/Currencies';
 import { Main } from '../Main/Main';
 import lg from '../../asseets/lg.png'
+import { BestOffers } from '../offers/BestOffers';
 
 const Header = () => {
 
   const [findOffers, setFindOffers] = useState(false);
-
+  const [selectRange, setSelectRange] = useState(0);
 
 
 
@@ -79,6 +80,9 @@ const Header = () => {
 
       <Main />
 
+      <Form.Label>Select range: {selectRange}</Form.Label>
+      <Form.Range value={selectRange} onChange={(e) => setSelectRange(e.target.value)} />
+
       <div className={"content__block"}>
         <Form.Select aria-label="Default select example" size="xl">
           <option>До какой суммы искать предложения?</option>
@@ -114,6 +118,9 @@ const Header = () => {
 
         {findOffers && <Currencies setFindOffers={setFindOffers} />
         }
+
+        
+       <BestOffers />
 
         <Button variant={"primary"} onClick={onToggleMainButton} >Главная</Button>
         <Button onClick={onClose} >Закрыть</Button>

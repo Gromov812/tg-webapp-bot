@@ -13,3 +13,12 @@
     display: flex;
     gap: 0 5px;
 }
+.bestoffers__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bestoffers__block > h3 {
+    text-align: center;
+}
