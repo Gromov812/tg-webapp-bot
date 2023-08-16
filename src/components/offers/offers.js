@@ -2,6 +2,7 @@ let offers = [
     {   title: 123,
         img: 'https://avatars.mds.yandex.net/get-altay/4365916/2a0000017914e032d1c7a0a1d03586577cd9/XXXL',
         delay: 1,
+        promotext: 'ТАКОЙ ЗАМЕЧАТЕЛЬНЫЙ ОФФЕР! НАДО СКОРЕЕ БРАТЬ!!!',
         text: 'Ставка 0% первые 14 дней',
         bg: 'warning',
         money: 'до 30 000 рублей', 
