@@ -12,6 +12,7 @@ const Offers = ({setFindOffers, setLoading, navRef}) => {
 
 
     useEffect(() => {
+        console.log(offers);
          ref.current.scrollIntoView({ behavior: "smooth" });
 
         console.log(`RENDER!`);
@@ -27,7 +28,8 @@ const Offers = ({setFindOffers, setLoading, navRef}) => {
     return ( <>
 <div className={'offers__block'} ref={ref}>
         {offers.map((el, i) => {
-            return <Offer delay={el.delay} title={el.title} offerOptions={{text: 'Ставка 0% первые 14 дней', bg: 'info', money: el.money,
+            console.log(el);
+            return <Offer delay={el.delay} title={el.title} text={el.promotext} image={el.img} offerOptions={{text: 'Ставка 0% первые 14 дней', bg: 'info', money: el.money,
              percent: el.percent, period: el.period, age: el.age, document: el.document, recive: el.recive}} />
         })}
     

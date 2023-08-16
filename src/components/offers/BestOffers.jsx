@@ -13,10 +13,10 @@ export function BestOffers(props) {
     "month": "numeric",
     "day": "numeric"
 })}</h3>
-
+{/* 
        <Offer delay={0.3} title={'best 1'} />
        <Offer delay={0.3} title={'best 2'} />
-       <Offer delay={0.3} title={'best 3'} />
+       <Offer delay={0.3} title={'best 3'} /> */}
        </div>
        </>
        )

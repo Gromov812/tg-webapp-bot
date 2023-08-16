@@ -7,7 +7,10 @@ import React, { useState } from "react";
 import Badge from 'react-bootstrap/Badge';
 import  ModalBlock  from './Modal';
 
-const Offer = ({delay, title, offerOptions, text}) => {
+const Offer = ({delay, title, offerOptions, text, image}) => {
+
+
+    console.log(delay, title, offerOptions, text, image);
 
 const [showModal, setShowModal] = useState(false);
 
@@ -19,7 +22,7 @@ const [showModal, setShowModal] = useState(false);
         transition={{duration: 1.3, delay}}
     >
         <Card style={{ width: '22rem', margin:'15px 0'}}>
-            <Card.Img variant="top" src="https://avatars.mds.yandex.net/get-altay/4365916/2a0000017914e032d1c7a0a1d03586577cd9/XXXL" />
+            <Card.Img variant="top" src={image} />
             <Card.Body>
                 {
                     offerOptions?.text &&
@@ -41,7 +44,7 @@ const [showModal, setShowModal] = useState(false);
                 <ListGroup.Item>Срок: <b>{offerOptions.period}</b></ListGroup.Item>
                 <ListGroup.Item>Возраст клиента: <b>{offerOptions.age}</b></ListGroup.Item>
                 <ListGroup.Item>Документ: <b>{offerOptions.document}</b></ListGroup.Item>
-                <ListGroup.Item>Выдача: <b>{offerOptions.monreciveey}</b></ListGroup.Item>
+                <ListGroup.Item>Выдача: <b>{offerOptions.recive}</b></ListGroup.Item>
             </ListGroup>
             <Card.Body>
                 <div className="buttons__row">
