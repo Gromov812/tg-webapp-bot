@@ -16,7 +16,7 @@ const [showModal, setShowModal] = useState(false);
     <motion.div
         initial={{opacity:0, x:-100}}
         animate={{opacity: 1, x: 0}}
-        transition={{duration: 1.3, delay: delay}}
+        transition={{duration: 1.3, delay}}
     >
         <Card style={{ width: '22rem', margin:'15px 0'}}>
             <Card.Img variant="top" src="https://avatars.mds.yandex.net/get-altay/4365916/2a0000017914e032d1c7a0a1d03586577cd9/XXXL" />
@@ -29,18 +29,19 @@ const [showModal, setShowModal] = useState(false);
                 </>
                 }
                
-                <Card.Title><h3>Займ под 2% в месяц</h3></Card.Title>
+                <Card.Title><h3>{title}</h3></Card.Title>
                 <Card.Text>
-                    Выгодный займ для приобритения бытовых приборов, ремонта автотранспорта или погашении предыдущих  задолженностей
+                    {text}
                 </Card.Text>
             </Card.Body>
             <ListGroup className="list-group-flush">
-                <ListGroup.Item>Сумма: <b>до 30 000 рублей</b></ListGroup.Item>
-                <ListGroup.Item>Ставка: <Badge bg="success" style={{'font-size': '0.9rem'}}> от 0%</Badge></ListGroup.Item>
-                <ListGroup.Item>Срок: <b>от 7 до 30 дней</b></ListGroup.Item>
-                <ListGroup.Item>Возраст клиента: <b>от 20 до 99 лет</b></ListGroup.Item>
-                <ListGroup.Item>Документ: <b>паспорт РФ</b></ListGroup.Item>
-                <ListGroup.Item>Выдача: <b>на карту</b></ListGroup.Item>
+
+                <ListGroup.Item>Сумма: <b>{offerOptions.money}</b></ListGroup.Item>
+                <ListGroup.Item>Ставка: <Badge bg="success" style={{'font-size': '0.9rem'}}>{offerOptions.percent}</Badge></ListGroup.Item>
+                <ListGroup.Item>Срок: <b>{offerOptions.period}</b></ListGroup.Item>
+                <ListGroup.Item>Возраст клиента: <b>{offerOptions.age}</b></ListGroup.Item>
+                <ListGroup.Item>Документ: <b>{offerOptions.document}</b></ListGroup.Item>
+                <ListGroup.Item>Выдача: <b>{offerOptions.monreciveey}</b></ListGroup.Item>
             </ListGroup>
             <Card.Body>
                 <div className="buttons__row">
