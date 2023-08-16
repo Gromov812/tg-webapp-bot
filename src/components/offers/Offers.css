@@ -1,0 +1,24 @@
+.offers__block {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 35px 10px;
+}
+.offers__block > li {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+.buttons__row {
+    display: flex;
+    gap: 0 5px;
+}
+.bestoffers__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bestoffers__block > h3 {
+    text-align: center;
+}

@@ -1,0 +1,19 @@
+.currPair {
+    height: 100%;
+    font-weight: 700;
+}
+.transit {
+    transition: opacity .3s ease-in-out;
+}
+
+.on {
+    opacity: 1;
+}
+.off {
+    opacity: 0;
+}
+.blick {
+    height: 100px;
+    width: 100px;
+    background: red;
+}

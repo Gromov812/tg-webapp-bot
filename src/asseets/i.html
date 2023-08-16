@@ -1,0 +1,29 @@
+<script>
+
+    'use strict'
+
+    Array.prototype.red = function (process, initial = 0) {
+
+        
+let acc = initial;
+let cur;
+          
+            for (let i = typeof(initial) == "number" ? initial : 0; i < this.length; i++) {
+                this[i] = process()
+            }
+
+       return function (acc, prev, i, this) {
+            
+            prev = initial;
+            acc += prev;
+
+            for (let i = 0; i < this.length; i++) {
+                acc += prev
+            }
+
+
+        }
+
+    }
+
+</script>
