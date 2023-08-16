@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import Badge from 'react-bootstrap/Badge';
 import  ModalBlock  from './Modal';
 
-const Offer = ({delay, title, offerOptions}) => {
+const Offer = ({delay, title, offerOptions, text}) => {
 
 const [showModal, setShowModal] = useState(false);
 
