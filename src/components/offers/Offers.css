@@ -22,3 +22,8 @@
 .bestoffers__block > h3 {
     text-align: center;
 }
+.card-img-top {
+    max-width: 350px;
+    max-height: 350px;
+    object-fit: contain;
+}

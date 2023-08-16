@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import Badge from 'react-bootstrap/Badge';
 import  ModalBlock  from './Modal';
 
-const Offer = ({delay, title, offerOptions, text, image}) => {
+const Offer = ({delay, title, offerOptions, text, image, modalTitle, modalText}) => {
 
 
     console.log(delay, title, offerOptions, text, image);
@@ -52,7 +52,7 @@ const [showModal, setShowModal] = useState(false);
                     </div>
             </Card.Body>
         </Card>
-        {showModal && <ModalBlock setShowModal={setShowModal} show={showModal} title={title} />}
+        {showModal && <ModalBlock setShowModal={setShowModal} show={showModal} modalTitle={modalTitle} modalText={modalText} />}
         </motion.div>
 
     );
