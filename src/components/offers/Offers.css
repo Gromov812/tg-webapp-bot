@@ -27,3 +27,6 @@
     max-height: 350px;
     object-fit: contain;
 }
+.bg-info {
+background-color: #f59e00;
+}

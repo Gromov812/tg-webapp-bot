@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import Badge from 'react-bootstrap/Badge';
 import  ModalBlock  from './Modal';
 
-const Offer = ({delay, title, offerOptions, text, image, modalTitle, modalText}) => {
+const Offer = ({delay, title, offerOptions, text, image, modalTitle, modalText, url}) => {
 
 
     console.log(delay, title, offerOptions, text, image);
@@ -48,7 +48,7 @@ const [showModal, setShowModal] = useState(false);
             </ListGroup>
             <Card.Body>
                 <div className="buttons__row">
-                <Badge onClick={()=> setShowModal(true)} bg="secondary" style={{display: 'flex', 'align-items': 'center', 'font-weight': '400'}}>Подробнее</Badge> <Button style={{flex: '1'}} variant={"success"} >Запросить займ</Button>
+                <Badge onClick={()=> setShowModal(true)} bg="secondary" style={{display: 'flex', 'align-items': 'center', 'font-weight': '400', cursor: 'pointer'}}>Подробнее</Badge> <Button style={{flex: '1'}} variant={"success"} href={url}>Запросить займ</Button>
                     </div>
             </Card.Body>
         </Card>
