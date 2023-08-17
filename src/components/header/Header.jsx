@@ -64,7 +64,7 @@ const Header = () => {
       <div className={"header__block_pic"}>
       </div> */}
 
-      {user?.first_name && <h1>Hello, {user?.first_name}!</h1>}
+      {/* {user?.first_name && <h1>Hello, {user?.first_name}!</h1>} */}
 
       <Carousel fade>
 
