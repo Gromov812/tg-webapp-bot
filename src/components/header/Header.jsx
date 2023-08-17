@@ -67,13 +67,7 @@ const Header = () => {
       {user?.first_name && <h1>Hello, {user?.first_name}!</h1>}
 
       <Carousel fade>
-        <Carousel.Item style={{ 'max-height': '200px' }} interval={1700}>
-          <img
-            className="d-block w-100"
-            src="https://kredit-on.ru/wp-content/uploads/f/1/b/f1b1c6027c823d7f0062ff97f532e881.jpeg"
-            alt="First slide"
-          />
-        </Carousel.Item>
+
         <Carousel.Item style={{ 'max-height': '200px' }} interval={1700}>
           <img
             className="d-block w-100"
