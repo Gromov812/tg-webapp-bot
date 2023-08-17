@@ -94,9 +94,9 @@ const Header = () => {
         <div className={"calc__block"}>
         <h4>Параметры поиска:</h4>
         <div>
-      <Form.Label  style={{'padding': '15px 0 0 10px'}} >Сумма: <Badge bg="success">{selectRangeSumma} </Badge> руб.</Form.Label>
+      <Form.Label  style={{'padding': '15px 0 0 10px'}} >Сумма: <Badge bg="success">{selectRangeSumma} </Badge> руб.  {selectRangeSumma < 99999 ? '' : 'и более'}</Form.Label>
       <Form.Range min={2} id='range_1' max={100} value={selectRangeSumma/1000} style={{'padding': '15px 0 0 10px'}} onChange={(e) => setSelectRangeSumma(v =>  e.target.value*1000)} />
-      <Form.Label  style={{'padding': '15px 0 0 10px'}} >Срок: <Badge bg="success">{selectRangeDays}</Badge> дней</Form.Label>
+      <Form.Label  style={{'padding': '15px 0 0 10px'}} >Срок: <Badge bg="success">{selectRangeDays}</Badge> дней {selectRangeDays < 29 ? '' : 'и более'}</Form.Label>
       <Form.Range min={5}  max={30} style={{'padding': '15px 0 0 10px'}} value={selectRangeDays} onChange={(e) => setSelectRangeDays(e.target.value)} />
 </div>
 <div>
@@ -118,26 +118,15 @@ const Header = () => {
         </div>
 </div>
       <div className={"content__block"}>
-        {/* <Form.Select aria-label="Default select example" size="xl">
-          <option>До какой суммы искать предложения?</option>
-          <option value="10000">До 10000 руб.</option>
-          <option value="20000">До 20000 руб.</option>
-          <option value="30000">До 30000 руб.</option>
-          <option value="40000">До 40000 руб.</option>
-          <option value="50000">До 50000 руб.</option>
-          <option value="more">Более 50000 руб.</option>
-        </Form.Select> */}
 
         
-
-
 
 
         <div className="d-grid gap-2">
           <Button onClick={findOffersButtonHandler} pref={'qwe'} variant={'success'} size={"lg"}>Найти предложения</Button>
         </div>
 
-        {findOffers && <Currencies setFindOffers={setFindOffers} navRef={nav} />
+        {findOffers && <Currencies setFindOffers={setFindOffers} searchSumm={selectRangeSumma} searchDays={selectRangeDays} navRef={nav} />
         }
 
         {!findOffers &&  <BestOffers />}

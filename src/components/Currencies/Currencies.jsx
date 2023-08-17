@@ -5,7 +5,7 @@ import LazyLoad from "../LazyLoad/LazyLoad";
 import {AnimatePresence, motion} from "framer-motion";
 import Offers from "../offers/Offers";
 
-const Currencies = ({setFindOffers, navRef}) => {
+const Currencies = ({setFindOffers, navRef, searchSumm, searchDays}) => {
 
 
     const [isLoading, setLoading] = useState(true);
@@ -39,7 +39,7 @@ const Currencies = ({setFindOffers, navRef}) => {
        animate={{opacity:1}}
        transition={{duration: .5}}
        >
-            {!isLoading && <Offers navRef={navRef} setLoading={setLoading} setFindOffers={setFindOffers}/> }
+            {!isLoading && <Offers searchSumm={searchSumm} searchDays={searchDays} navRef={navRef} setLoading={setLoading} setFindOffers={setFindOffers}/> }
        </div>
         </>
     );

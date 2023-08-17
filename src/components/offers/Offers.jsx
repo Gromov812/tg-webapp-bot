@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Offer from "./Offer";
 import offers from "./offers";
 
-const Offers = ({setFindOffers, setLoading, navRef}) => {
+const Offers = ({setFindOffers, setLoading, navRef, searchSumm, searchDays}) => {
 
 
     let ref = useRef();
@@ -27,7 +27,7 @@ const Offers = ({setFindOffers, setLoading, navRef}) => {
 
     return ( <>
 <div className={'offers__block'} ref={ref}>
-        {offers.map((el, i) => {
+        {offers.filter(el => el.maxMoney >= searchSumm && el.maxDays >= searchDays).map((el, i) => {
             return <Offer delay={el.delay} title={el.title} text={el.promotext} image={el.img} url={el.url} offerOptions={{text: el.badge, bg: 'info', money: el.money,
              percent: el.percent, period: el.period, age: el.age, document: el.document, recive: el.recive}} modalText={el.modalText} modalTitle={el.modalTitle} />
         })}

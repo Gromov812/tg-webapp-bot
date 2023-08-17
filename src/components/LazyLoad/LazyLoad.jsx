@@ -12,7 +12,7 @@ const LazyLoad = () => {
                 if (t >= 100) clearInterval(intervalId);
                 return (t < 100) ? t + 1 : t;
             });
-        }, 50);
+        }, 25);
         return () => clearInterval(intervalId);
     }, []);
 
