@@ -101,7 +101,7 @@ const Header = () => {
 </div>
 <div>
 
-      <Form>
+      {/* <Form>
           <Form.Check
             size='20'
             type="switch"
@@ -114,7 +114,7 @@ const Header = () => {
             label="Без паспорта"
             id="disabled-custom-switch"
           />
-        </Form>
+        </Form> */}
         </div>
 </div>
       <div className={"content__block"}>
