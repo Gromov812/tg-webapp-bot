@@ -18,9 +18,9 @@ function ModalBlock({show, setShowModal, modalTitle, modalText}) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>
+          <pre>
             {modalText}
-          </p>
+          </pre>
         </Modal.Body>
       </Modal>
         </>
