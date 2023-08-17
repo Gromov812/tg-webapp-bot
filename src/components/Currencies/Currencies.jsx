@@ -15,7 +15,7 @@ const Currencies = ({setFindOffers, navRef, searchSumm, searchDays}) => {
        let t = setTimeout(() => {
 
             setLoading(false);
-        },5500);
+        },3000);
 
         return () => clearTimeout(t);
     }, [])

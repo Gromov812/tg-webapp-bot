@@ -19,7 +19,7 @@ const [showModal, setShowModal] = useState(false);
     <motion.div
         initial={{opacity:0, x:-100}}
         animate={{opacity: 1, x: 0}}
-        transition={{duration: 1.3, delay}}
+        transition={{duration: 1.1, delay}}
     >
         <Card style={{ width: '22rem', margin:'15px 0'}}>
             <Card.Img variant="top" src={image} />
